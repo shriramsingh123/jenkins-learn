@@ -1,4 +1,4 @@
 FROM openjdk:17
-ARG JAR_FILE = target/* .jar
-COPY ${JAR_FILE} jenkins-learn.jar
-ENTRYPOINT ["java",".jar","/jenkins-learn"]
+EXPOSE 8080
+ADD target/jenkins-learn.jar jenkins-learn.jar
+ENTRYPOINT ["java","-jar","/jenkins-learn.jar"]
